@@ -1,6 +1,6 @@
 // Задание 1
 
-function getArrayParams(arr) {
+function getArrayParams(...arr) {
     let max = 100;
     let min = -100;
     let sum = 0;
@@ -17,10 +17,7 @@ function getArrayParams(arr) {
      let avg = avgFull.toFixed(2) * 1;
   return { min: min, max: max, avg: avg};
 }
-getArrayParams([-99, 99, 10]); // { min: -99, max: 99, avg: 3.33 }
-let c =  getArrayParams([-99, 99, 10]);
-console.log(c)
-getArrayParams([1, 2, 3, -100, 10]);
+
 
 // Задание 2
 function worker(arr) {
@@ -30,10 +27,8 @@ function worker(arr) {
   }
   return sum;
 }
-
 function makeWork(arrOfArr, func) {
   let max = 0;
-
   for (let i = 0; i < arrOfArr.length; i++){
     let sum = worker(arrOfArr[i])
     if (sum > max) {
@@ -73,4 +68,4 @@ function makeWork(arrOfArr, func) {
 console.log(worker2([0, 0, 0])); // 0 - 0 = 0
 console.log(worker2([-1, -99])); // -99 - (-1) = -98 => 98
 arrOfArr = [[0, 0, 0], [-1, -99]];
-makeWork(arrOfArr, worker2;
+makeWork(arrOfArr, worker2);
